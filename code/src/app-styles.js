@@ -1,4 +1,5 @@
 import 'js-ui-kit/assets/sass/core.scss';
+import '../assets/fonts/fonts.scss';
 import { injectGlobal } from 'styled-components';
 
 import {
