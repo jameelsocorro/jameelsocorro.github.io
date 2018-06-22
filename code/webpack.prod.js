@@ -9,6 +9,7 @@ module.exports = baseConfig({
 	entry: './index.js',
 
 	output: {
+        publicPath: './',
 		filename: '[name].[chunkhash].js',
 	},
 

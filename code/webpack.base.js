@@ -14,8 +14,7 @@ module.exports = (options) => ({
     context: `${__dirname}`,
     entry: options.entry,
     output: Object.assign({
-        path: `${__dirname}/build/`,
-        publicPath: './'
+        path: `${__dirname}/build/`
     }, options.output),
     resolve: {
         extensions: ['.js'],

@@ -43,30 +43,35 @@ export const ArticleContainer = styled.div`
         }
     }
 
-        //for desktop2
-        @media (min-width: ${desktop2}px) {
+    //for desktop2
+    @media (min-width: ${desktop2}px) {
 
-            & .article__icon {
-                width: 70px;
-            }
+        & .article__icon {
+            width: 70px;
         }
+    }
 
-        //for desktop3
-        @media (min-width: ${desktop3}px) {
-            & .article__icon {
-                width: 90px;
-            }
+    //for desktop3
+    @media (min-width: ${desktop3}px) {
+        & .article__icon {
+            width: 90px;
         }
+    }
 
-        //for desktop4
-        @media (min-width: ${desktop4}px) {
-            & .article__icon {
-                width: 110px;
-            }
+    //for desktop4
+    @media (min-width: ${desktop4}px) {
+        & .article__icon {
+            width: 110px;
         }
+    }
 `;
 
 export const ArticleItemContainer = styled.div`
-    flex-basis: 0;
-    flex-grow: 1;
+
+    //for tablet
+    @media (min-width: ${tablet}px) {
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+
 `;

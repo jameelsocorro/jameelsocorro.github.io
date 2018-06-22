@@ -10,7 +10,7 @@ const data = {
         title: 'Let\'s Connect',
         desc: 'Interested working together? Feel free to connect with me',
         button: {
-            url: 'mailto:someone@yoursite.com',
+            url: 'mailto:jameelsocorro@gmail.com',
             title: 'Connect'
         }
     },

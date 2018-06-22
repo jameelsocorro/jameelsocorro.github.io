@@ -12,6 +12,7 @@ module.exports = baseConfig({
         './index.js'
     ],
     output: {
+        publicPath: '/',
         filename: '[name].js',
         chunkFilename: '[name].chunk.js'
     },
