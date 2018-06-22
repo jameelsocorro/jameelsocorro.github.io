@@ -52,8 +52,9 @@ class Contact extends Component {
                     buttons.map((button, key) => {
                         return (
                             <FooterButton key={key}
-                                        className='pr-16 pl-16 secondary-text'
-                                        fontSize='1.5rem'>
+                                            className='pr-16 pl-16 secondary-text'
+                                            fontSize='1.5rem'
+                                            href={button.url}>
                                 <FontAwesomeIcon icon={button.icon}></FontAwesomeIcon>
                             </FooterButton>
                         )
