@@ -1,14 +1,11 @@
-import logo from '../../../assets/img/js-logo.png'
-import avatarImage from '../../../assets/img/avatar.jpg'
+import logo from '../../../assets/img/js-logo-white.png'
 import backgroundImage from '../../../assets/img/background.jpg'
 
 const data = {
-    intro: 'Hi, I\'m Jameel',
-    jobTitle: 'Front-end Web Developer',
-    headingTop: 'Design',
-    headingBottom: '& Code',
+    buttonTitle: 'Find out more',
+    headingTop: 'Design & Code',
+    headingBottom: 'You will never win if you never begin',
     logo,
-    avatarImage,
     backgroundImage
 };
 
