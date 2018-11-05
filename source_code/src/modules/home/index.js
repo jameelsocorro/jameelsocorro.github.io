@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import ReactDOM from 'react-dom'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 import { faGithub } from '@fortawesome/fontawesome-free-brands';
@@ -10,6 +11,16 @@ import data from './data';
 import { Page } from 'js-ui-kit';
 
 class Home extends Component {
+
+    constructor(props) {
+        super(props);
+        this.aboutSectionRef = React.createRef();
+    }
+
+    scrollToAboutSection(e) {
+        const aboutSectionNode = ReactDOM.findDOMNode(this.aboutSectionRef.current);
+        aboutSectionNode.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
     renderHeadingSection() {
         const {
@@ -36,7 +47,7 @@ class Home extends Component {
                             <div className='flex flex--column flex--item-center'>
                                 <h2 className="text-uppercase mb-16 fw-regular">{headingTop}</h2>
                                 <h5 className="mb-32 fw-light">{headingBottom}</h5>
-                                <a href="#" className="btn btn-white">{buttonTitle}</a>
+                                <button onClick={this.scrollToAboutSection.bind(this)} className="btn btn-white">{buttonTitle}</button>
                             </div>
                         </div >
                     </div>
@@ -51,7 +62,7 @@ class Home extends Component {
             desc } = data.aboutSection;
 
         return (
-            <section className="diagonal-section bg-metal">
+            <section ref={this.aboutSectionRef} className="diagonal-section bg-metal">
                 <div className="section-center pr-40 pl-40 text-center">
                     <h3 className="mb-32">{title}</h3>
                     <p className="text-justify">{desc}</p>
