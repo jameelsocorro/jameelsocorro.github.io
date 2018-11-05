@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
+
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 import { faGithub } from '@fortawesome/fontawesome-free-brands';
@@ -81,9 +83,14 @@ class Home extends Component {
                         <div className="flex flex--center-all">
                             {
                                 m.gitHubUrl &&
-                                <a href={m.gitHubUrl} target="_blank" className="btn btn-white btn-icon mr-32"><FontAwesomeIcon icon={faGithub}></FontAwesomeIcon></a>
+                                <a href={m.gitHubUrl}
+                                    style={{ marginLeft: '-7rem' }}
+                                    target="_blank"
+                                    className="btn btn-white btn-icon mr-32">
+                                    <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
+                                </a>
                             }
-                            <a href="#" className="btn btn-white">{m.buttonTitle}</a>
+                            <Link to="/js-ui-kit" className="btn btn-white">{m.buttonTitle}</Link>
                         </div>
                     </div>
                 </section>

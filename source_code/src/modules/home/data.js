@@ -13,12 +13,12 @@ const data = {
     headingSection: {
         buttonTitle: 'Find out more',
         headingTop: 'Design & Code',
-        headingBottom: 'You will never win if you never begin',
+        headingBottom: 'own less. do less. declutter. simplify.',
         logo,
         backgroundImage
     },
     aboutSection: {
-        title: 'Little bit about me',
+        title: 'little bit about me',
         desc: 'I\'m a passionate web developer with more than 6 years of experience. I\'ve done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. I actively seek out new technologies and stay up-to-date on industry trends and advancements.',
     },
     workItemsSection: [
