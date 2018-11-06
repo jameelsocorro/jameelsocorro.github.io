@@ -21,6 +21,9 @@ const data = {
             { class: '.flex--right', desc: 'Make specific element go to the right side.' },
             { class: '.flex--tablet-row', desc: 'Make the element column on mobile then row on tablet.' }
         ],
+    },
+    typographySection: {
+        title: 'Typography'
     }
 };
 
