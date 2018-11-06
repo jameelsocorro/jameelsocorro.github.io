@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 
 import data from './data';
 
+import { ColorElement } from "./style";
+
 class UiKitModule extends Component {
 
 	renderNavbar() {
@@ -11,6 +13,27 @@ class UiKitModule extends Component {
 			<nav className="navbar navbar--secondary p-24">
 				<div className="navbar__title">{title}</div>
 			</nav>
+		);
+	}
+
+	renderColorSection() {
+		const { title, items } = data.colorSection;
+
+		return (
+			<section className="p-32 pb-16">
+				<h3 className="text-uppercase mb-24">{title}</h3>
+				<div className="flex flex--column flex--tablet-row">
+				{
+					items.map((item, key) => {
+						return (
+							<ColorElement key={key} className={`mr-16 mb-16 p-16 bg-${item.class} ${item.textColor}-text`}>
+								{item.class}
+							</ColorElement>
+						)
+					})
+				}
+				</div>
+			</section>
 		);
 	}
 
@@ -62,6 +85,7 @@ class UiKitModule extends Component {
 		return (
 			<Fragment>
 				{this.renderNavbar()}
+				{this.renderColorSection()}
 				{this.renderFlexBoxSection()}
 				{this.renderTypographySection()}
       		</Fragment>

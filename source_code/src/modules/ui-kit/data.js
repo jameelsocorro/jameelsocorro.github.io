@@ -5,6 +5,18 @@ const data = {
         logo,
         title: 'js-ui-kit'
     },
+    colorSection: {
+        title: 'Colors',
+        items: [
+            { class: 'primary', textColor: 'white' },
+            { class: 'secondary', textColor: 'white' },
+            { class: 'info', textColor: 'white' },
+            { class: 'success', textColor: 'white' },
+            { class: 'warning', textColor: 'white' },
+            { class: 'danger', textColor: 'white' },
+            { class: 'metal', textColor: 'black' }
+        ],
+    },
     flexBoxSection: {
         title: 'Flex-box',
         items: [
