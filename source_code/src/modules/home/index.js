@@ -10,8 +10,6 @@ import { FooterLink } from "./style";
 
 import data from './data';
 
-import { Page } from 'js-ui-kit';
-
 class Home extends Component {
 
     constructor(props) {
