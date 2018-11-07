@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+
 import data from './data';
 
 import { ColorElement } from "./style";
@@ -13,6 +15,40 @@ class UiKitModule extends Component {
 			<nav className="navbar navbar--secondary p-24">
 				<div className="navbar__title">{title}</div>
 			</nav>
+		);
+	}
+
+	renderButtonSection() {
+		const { title, items } = data.buttonSection;
+
+		return (
+			<section className="p-32 pb-16">
+				<h3 className="text-uppercase mb-32">{title}</h3>
+				<h4 className="text-uppercase mb-24">Standard</h4>
+				<div className="flex flex--wrap mb-24">
+				{
+					items.map((item, key) => {
+						return (
+							<button key={key} className={`mr-16 mb-16 btn btn-${item.class}`}>
+								{item.class}
+							</button>
+						)
+					})
+				}
+				</div>
+				<h4 className="text-uppercase mb-16">Icons</h4>
+				<div className="flex flex--wrap">
+				{
+					items.map((item, key) => {
+						return (
+							<button key={key} className={`mr-16 mb-16 btn btn-icon btn-${item.class}`}>
+								<FontAwesomeIcon icon={item.icon}></FontAwesomeIcon>
+							</button>
+						)
+					})
+				}
+				</div>
+			</section>
 		);
 	}
 
@@ -86,6 +122,7 @@ class UiKitModule extends Component {
 			<Fragment>
 				{this.renderNavbar()}
 				{this.renderColorSection()}
+				{this.renderButtonSection()}
 				{this.renderFlexBoxSection()}
 				{this.renderTypographySection()}
       		</Fragment>

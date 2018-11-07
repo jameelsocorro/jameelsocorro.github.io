@@ -1,9 +1,36 @@
 import logo from '../../../assets/img/js-logo-white.png';
 
+import {
+    faLinkedinIn,
+    faInstagram,
+    faFacebook,
+    faAngellist,
+    faGithub
+} from '@fortawesome/fontawesome-free-brands';
+
+import {
+    faAngleUp,
+    faAngleDown,
+    faAngleRight
+} from '@fortawesome/fontawesome-free-solid';
+
 const data = {
     navbar: {
         logo,
         title: 'js-ui-kit'
+    },
+    buttonSection: {
+        title: 'Buttons',
+        items: [
+            { class: 'primary', icon: faLinkedinIn },
+            { class: 'secondary', icon: faInstagram },
+            { class: 'info', icon: faFacebook },
+            { class: 'success', icon: faAngellist },
+            { class: 'warning', icon: faGithub },
+            { class: 'danger', icon: faAngleUp },
+            { class: 'metal', icon: faAngleDown },
+            { class: 'white', icon: faAngleRight }
+        ],
     },
     colorSection: {
         title: 'Colors',
