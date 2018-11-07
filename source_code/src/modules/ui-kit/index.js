@@ -1,12 +1,54 @@
 import React, { Component, Fragment } from 'react';
+import ReactDOM from 'react-dom';
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
+import {
+    faBars
+} from '@fortawesome/fontawesome-free-solid';
+
 import data from './data';
 
-import { ColorElement } from "./style";
+import { PageLayout, SideNav, ColorElement } from "./style";
 
 class UiKitModule extends Component {
+
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			activeSection: 'Colors'
+		};
+
+		this.colorSectionRef = React.createRef();
+		this.buttonSectionRef = React.createRef();
+		this.flexboxSectionRef = React.createRef();
+		this.typographySectionRef = React.createRef();
+    }
+
+	scrollToAboutSection(sectionName) {
+
+		let ref = this.colorSectionRef;
+
+		switch (sectionName) {
+			case 'Colors':
+				ref = this.colorSectionRef;
+				break;
+			case 'Buttons':
+				ref = this.buttonSectionRef;
+				break;
+			case 'Flex-box':
+				ref = this.flexboxSectionRef;
+				break;
+			case 'Typography':
+				ref = this.typographySectionRef;
+				break;
+		}
+
+        const sectionNode = ReactDOM.findDOMNode(ref.current);
+		sectionNode.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		this.setState({ activeSection: sectionName });
+    }
 
 	renderNavbar() {
 		const { title } = data.navbar;
@@ -18,11 +60,46 @@ class UiKitModule extends Component {
 		);
 	}
 
+	renderSideNav() {
+		return (
+			<SideNav className="p-40">
+				{
+					data.sideNav.map((section, key) => {
+						return (
+							<li key={key} onClick={() => this.scrollToAboutSection(section)} className={`mb-16 ${ this.state.activeSection == section && 'active' }`}><h6>{section}</h6></li>
+						)
+					})
+				}
+			</SideNav>
+		);
+	}
+
+	renderColorSection() {
+		const { title, items } = data.colorSection;
+
+		return (
+			<section ref={this.colorSectionRef} className="p-32 pb-16">
+				<h3 className="text-uppercase mb-24">{title}</h3>
+				<div className="flex flex--column flex--tablet-row">
+				{
+					items.map((item, key) => {
+						return (
+							<ColorElement key={key} className={`mr-16 mb-16 p-16 bg-${item.class} ${item.textColor}-text`}>
+								{item.class}
+							</ColorElement>
+						)
+					})
+				}
+				</div>
+			</section>
+		);
+	}
+
 	renderButtonSection() {
 		const { title, items } = data.buttonSection;
 
 		return (
-			<section className="p-32 pb-16">
+			<section ref={this.buttonSectionRef} className="p-32 pb-16">
 				<h3 className="text-uppercase mb-32">{title}</h3>
 				<h4 className="text-uppercase mb-24">Standard</h4>
 				<div className="flex flex--wrap mb-24">
@@ -52,32 +129,11 @@ class UiKitModule extends Component {
 		);
 	}
 
-	renderColorSection() {
-		const { title, items } = data.colorSection;
-
-		return (
-			<section className="p-32 pb-16">
-				<h3 className="text-uppercase mb-24">{title}</h3>
-				<div className="flex flex--column flex--tablet-row">
-				{
-					items.map((item, key) => {
-						return (
-							<ColorElement key={key} className={`mr-16 mb-16 p-16 bg-${item.class} ${item.textColor}-text`}>
-								{item.class}
-							</ColorElement>
-						)
-					})
-				}
-				</div>
-			</section>
-		);
-	}
-
 	renderFlexBoxSection() {
 		const { title, items } = data.flexBoxSection;
 
 		return (
-			<section className="p-32">
+			<section ref={this.flexboxSectionRef} className="p-32">
 				<h3 className="text-uppercase mb-8">{title}</h3>
 				{
 					items.map((item, key) => {
@@ -97,7 +153,7 @@ class UiKitModule extends Component {
 		const { title } = data.typographySection;
 
 		return (
-			<section className="p-32">
+			<section ref={this.typographySectionRef} className="p-32">
 				<h3 className="text-uppercase mb-8">{title}</h3>
 				<div className="pt-16 pb-16">
 					<h1 className="mb-16 danger-text">Heading 1</h1>
@@ -121,10 +177,15 @@ class UiKitModule extends Component {
 		return (
 			<Fragment>
 				{this.renderNavbar()}
-				{this.renderColorSection()}
-				{this.renderButtonSection()}
-				{this.renderFlexBoxSection()}
-				{this.renderTypographySection()}
+				<PageLayout>
+					{this.renderSideNav()}
+					<div className="scrollable">
+						{this.renderColorSection()}
+						{this.renderButtonSection()}
+						{this.renderFlexBoxSection()}
+						{this.renderTypographySection()}
+					</div>
+				</PageLayout>
       		</Fragment>
 		)
 	}

@@ -15,6 +15,12 @@ import {
 } from '@fortawesome/fontawesome-free-solid';
 
 const data = {
+    sideNav: [
+        'Colors',
+        'Buttons',
+        'Flex-box',
+        'Typography'
+    ],
     navbar: {
         logo,
         title: 'js-ui-kit'
