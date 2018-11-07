@@ -19,7 +19,7 @@ const data = {
     },
     aboutSection: {
         title: 'little bit about me',
-        desc: 'I\'m a passionate web developer with more than 6 years of experience. I\'ve done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. I actively seek out new technologies and stay up-to-date on industry trends and advancements.',
+        desc: 'Hi, my name is Jameel Socorro. I\'m a passionate web developer with more than 6 years of experience. I\'ve done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. I actively seek out new technologies and stay up-to-date on industry trends and advancements.',
     },
     workItemsSection: [
         {
